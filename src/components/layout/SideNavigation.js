@@ -1,7 +1,7 @@
 import classes from "./SideNavigation.module.css";
 import { ReactComponent as Logo } from "../../img/icons/film.svg";
 import { ReactComponent as Bookmarks } from "../../img/icons/bookmarks.svg";
-import { ReactComponent as Home } from "../../img/icons/home.svg";
+import { ReactComponent as Browse } from "../../img/icons/compass.svg";
 import { ReactComponent as Ribbon } from "../../img/icons/ribbon.svg";
 import { Link } from "react-router-dom";
 
@@ -17,8 +17,8 @@ function SideNavigation() {
         <ul className={classes.menu}>
           <li>
             <Link to="/" className={classes.option}>
-              <Home className={classes.optionIcon} />
-              <span className={classes.optionName}>Home</span>
+              <Browse className={classes.optionIcon} />
+              <span className={classes.optionName}>Browse</span>
             </Link>
           </li>
           <li>

@@ -3,7 +3,7 @@ import AllCategories from "../components/category/AllCategories";
 function MainPage() {
   return (
     <section>
-      <h1> All category</h1>
+      <h1> Browse</h1>
       <AllCategories />
     </section>
   );

@@ -1,4 +1,4 @@
-import CategoryCard from "../card/CategoryCard";
+import ScrollCardContainer from "../card/ScrollCardContainer";
 
 function MovieCategory() {
   const dummyData = [
@@ -135,7 +135,6 @@ function MovieCategory() {
       rating: "3",
     },
   ];
-  return <CategoryCard header="movie" data={dummyData} />;
+  return <ScrollCardContainer header="Movie" data={dummyData} />;
 }
-
 export default MovieCategory;

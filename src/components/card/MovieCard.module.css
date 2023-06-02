@@ -6,6 +6,7 @@
   flex-direction: column;
   background-color: var(--background-color);
   color: var(--text-color);
+  position: relative;
 }
 
 .image {
@@ -18,16 +19,52 @@
 .info {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  justify-content: space-between;
 }
 
-.ratings {
+.title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.startYear,
+.ratings.span,
+.duration {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.ratings,
+.duration {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 4px;
+}
+
+.ratings span {
+  font-size: 1.2rem;
 }
 
 .star {
-  width: 2rem;
-  color: orange;
+  width: 1.5rem;
+  fill: var(--star-orange);
+}
+
+.bookMark {
+  position: absolute;
+  width: 3rem;
+  fill: var(--star-orange);
+  color: var(--star-orange);
+}
+
+.bookMark:link,
+.bookMark:visited {
+  transition: all 0.3;
+}
+
+.bookMark:hover,
+.bookMark:active {
+  fill: var(--star-orange-darker);
+  color: var(--star-orange-darker);
 }
