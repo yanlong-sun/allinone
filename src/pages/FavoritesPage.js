@@ -1,144 +1,37 @@
-import ExpandedCard from "../components/card/ExpandedCard";
+import { useContext } from "react";
+import ExpandedCard from "../components/ui/ExpandedCard";
+import FavoritesContext from "../store/FavoritesContext";
+import Item from "../components/items/Item";
 
 function FavoritesPage() {
-  const dummyData = [
-    {
-      titleId: "1",
-      title: "John Wick: Chapter 3 - Parabellum",
-      isAdult: "true",
-      startYear: "2014",
-      runtimeMinutes: "120",
-      genres: "Action",
-      imageUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/8/80/NYC_wideangle_south_from_Top_of_the_Rock.jpg",
-      rating: "3",
-    },
-    {
-      titleId: "2",
-      title: "John Wick: Chapter 3 - Parabellum",
-      isAdult: "true",
-      startYear: "2014",
-      runtimeMinutes: "120",
-      genres: "Action",
-      imageUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/8/80/NYC_wideangle_south_from_Top_of_the_Rock.jpg",
-      rating: "3",
-    },
-    {
-      titleId: "11",
-      title: "John Wick: Chapter 3 - Parabellum",
-      isAdult: "true",
-      startYear: "2014",
-      runtimeMinutes: "120",
-      genres: "Action",
-      imageUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/8/80/NYC_wideangle_south_from_Top_of_the_Rock.jpg",
-      rating: "3",
-    },
-    {
-      titleId: "3",
-      title: "John Wick: Chapter 3 - Parabellum",
-      isAdult: "true",
-      startYear: "2014",
-      runtimeMinutes: "120",
-      genres: "Action",
-      imageUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/8/80/NYC_wideangle_south_from_Top_of_the_Rock.jpg",
-      rating: "3",
-    },
-    {
-      titleId: "4",
-      title: "John Wick: Chapter 3 - Parabellum",
-      isAdult: "true",
-      startYear: "2014",
-      runtimeMinutes: "120",
-      genres: "Action",
-      imageUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/8/80/NYC_wideangle_south_from_Top_of_the_Rock.jpg",
-      rating: "3",
-    },
-    {
-      titleId: "5",
-      title: "John Wick: Chapter 3 - Parabellum",
-      isAdult: "true",
-      startYear: "2014",
-      runtimeMinutes: "120",
-      genres: "Action",
-      imageUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/8/80/NYC_wideangle_south_from_Top_of_the_Rock.jpg",
-      rating: "3",
-    },
-    {
-      titleId: "6",
-      title: "John Wick: Chapter 3 - Parabellum",
-      isAdult: "true",
-      startYear: "2014",
-      runtimeMinutes: "120",
-      genres: "Action",
-      imageUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/8/80/NYC_wideangle_south_from_Top_of_the_Rock.jpg",
-      rating: "3",
-    },
-    {
-      titleId: "7",
-      title: "John Wick: Chapter 3 - Parabellum",
-      isAdult: "true",
-      startYear: "2014",
-      runtimeMinutes: "120",
-      genres: "Action",
-      imageUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/8/80/NYC_wideangle_south_from_Top_of_the_Rock.jpg",
-      rating: "3",
-    },
-    {
-      titleId: "8",
-      title: "John Wick: Chapter 3 - Parabellum",
-      isAdult: "true",
-      startYear: "2014",
-      runtimeMinutes: "120",
-      genres: "Action",
-      imageUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/8/80/NYC_wideangle_south_from_Top_of_the_Rock.jpg",
-      rating: "3",
-    },
-    {
-      titleId: "9",
-      title: "John Wick: Chapter 3 - Parabellum",
-      isAdult: "true",
-      startYear: "2014",
-      runtimeMinutes: "120",
-      genres: "Action",
-      imageUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/8/80/NYC_wideangle_south_from_Top_of_the_Rock.jpg",
-      rating: "3",
-    },
-    {
-      titleId: "10",
-      title: "John Wick: Chapter 3 - Parabellum",
-      isAdult: "true",
-      startYear: "2014",
-      runtimeMinutes: "120",
-      genres: "Action",
-      imageUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/8/80/NYC_wideangle_south_from_Top_of_the_Rock.jpg",
-      rating: "3",
-    },
-    {
-      titleId: "14",
-      title: "John Wick: Chapter 3 - Parabellum",
-      isAdult: "true",
-      startYear: "2014",
-      runtimeMinutes: "120",
-      genres: "Action",
-      imageUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/8/80/NYC_wideangle_south_from_Top_of_the_Rock.jpg",
-      rating: "3",
-    },
-  ];
+  const favoriteCtx = useContext(FavoritesContext);
+  let content;
+  if (favoriteCtx.totalFavorites === 0) {
+    content = <main>Bookmark your favorite Moives!</main>;
+  } else {
+    content = (
+      <ExpandedCard>
+        {favoriteCtx.favorites.map((data) => (
+          <Item
+            key={data.titleId}
+            isDisplayBookmark="false"
+            id={data.titleId}
+            title={data.title}
+            isAdult={data.isAdult}
+            startYear={data.startYear}
+            runtimeMinutes={data.runtimeMinutes}
+            genres={data.genres}
+            imageUrl={data.imageUrl}
+            rating={data.rating}
+          />
+        ))}
+      </ExpandedCard>
+    );
+  }
   return (
     <section>
       <h1>Bookmarks</h1>
-      <ExpandedCard data={dummyData} />
+      {content}
     </section>
   );
 }

@@ -1,27 +1,14 @@
 .container {
   width: 100%;
   border-radius: 6px;
-}
-
-.headLine {
-  display: flex;
-  justify-content: space-between;
-}
-
-.subContainer {
   position: relative;
-  border-radius: 6px;
   overflow: hidden;
 }
+
 .header {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 2rem;
-}
-
-.main {
-  display: flex;
-  overflow: hidden;
 }
 
 .bar {
@@ -35,15 +22,6 @@
 
 .bar::-webkit-scrollbar {
   display: none;
-}
-
-@keyframes scrollLoop {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
 }
 
 .buttonContainerBack,

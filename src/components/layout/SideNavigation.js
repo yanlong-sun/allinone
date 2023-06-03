@@ -4,6 +4,7 @@ import { ReactComponent as Bookmarks } from "../../img/icons/bookmarks.svg";
 import { ReactComponent as Browse } from "../../img/icons/compass.svg";
 import { ReactComponent as Ribbon } from "../../img/icons/ribbon.svg";
 import { Link } from "react-router-dom";
+import TotopButton from "../other/ToTopButton";
 
 function SideNavigation() {
   return (
