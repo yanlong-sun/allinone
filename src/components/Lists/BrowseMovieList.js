@@ -1,5 +1,5 @@
 import ScrollCards from "../ui/ScrollCards";
-import Item from "../items/Item";
+import ItemList from "../items/ItemList";
 
 function BrowseMovieList() {
   const dummyData = [
@@ -126,21 +126,10 @@ function BrowseMovieList() {
       rating: "3",
     },
   ];
-  // return <ScrollCardContainer header="Movie" data={dummyData} />;
-  const content = dummyData.map((data) => (
-    <Item
-      isDisplayBookmark="true"
-      key={data.titleId}
-      id={data.titleId}
-      title={data.title}
-      isAdult={data.isAdult}
-      startYear={data.startYear}
-      runtimeMinutes={data.runtimeMinutes}
-      genres={data.genres}
-      imageUrl={data.imageUrl}
-      rating={data.rating}
-    />
-  ));
-  return <ScrollCards>{content}</ScrollCards>;
+  return (
+    <ScrollCards>
+      <ItemList data={dummyData} isDisplayBookmark="true" />
+    </ScrollCards>
+  );
 }
 export default BrowseMovieList;

@@ -54,6 +54,8 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  padding: 0.8rem 0.5rem;
+  border-radius: 6px;
 }
 
 .optionName {
@@ -63,6 +65,16 @@
 .optionIcon {
   height: 1.8rem;
   fill: var(--text-color-second);
+}
+
+.option:link,
+.option:visited {
+  transition: all 0.3;
+}
+
+.option:hover,
+.option:active {
+  background-color: var(--menu-option-hover);
 }
 
 .optionName:link,

@@ -1,38 +1,25 @@
 import { useContext } from "react";
 import ExpandedCard from "../components/ui/ExpandedCard";
 import FavoritesContext from "../store/FavoritesContext";
-import Item from "../components/items/Item";
+import ItemList from "../components/items/ItemList";
 
 function FavoritesPage() {
   const favoriteCtx = useContext(FavoritesContext);
   let content;
   if (favoriteCtx.totalFavorites === 0) {
-    content = <main>Bookmark your favorite Moives!</main>;
+    content = <h2>Bookmark your favorite Moives!</h2>;
   } else {
     content = (
       <ExpandedCard>
-        {favoriteCtx.favorites.map((data) => (
-          <Item
-            key={data.titleId}
-            isDisplayBookmark="false"
-            id={data.titleId}
-            title={data.title}
-            isAdult={data.isAdult}
-            startYear={data.startYear}
-            runtimeMinutes={data.runtimeMinutes}
-            genres={data.genres}
-            imageUrl={data.imageUrl}
-            rating={data.rating}
-          />
-        ))}
+        <ItemList data={favoriteCtx.favorites} displayBookMark="false" />
       </ExpandedCard>
     );
   }
   return (
-    <section>
+    <div>
       <h1>Bookmarks</h1>
       {content}
-    </section>
+    </div>
   );
 }
 

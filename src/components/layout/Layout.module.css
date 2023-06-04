@@ -23,9 +23,9 @@
 }
 
 .main {
+  margin-top: 2rem;
   grid-row: 2/3;
   grid-column: 2/3;
-  overflow: auto;
   padding: 0 4rem;
 }
 

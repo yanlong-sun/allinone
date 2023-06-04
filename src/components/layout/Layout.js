@@ -1,6 +1,6 @@
 import MainNavigation from "./MainNavigation";
 import classes from "./Layout.module.css";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import SideNavigation from "./SideNavigation";
 import TotopButton from "../other/ToTopButton";
 
@@ -11,7 +11,11 @@ function Layout(props) {
     "--second": "#fc6f71",
     "--text-color": "#2A2B2E",
     "--text-color-second": "#3f4043",
+    "--menu-option-hover": "#f2f2f2",
+    // no need change as theme changes
     "--btn-hover": "#e2e2e2",
+    "--btn-delete": "#ff4d4d",
+    "--btn-delete-hover": "#ff9999",
     "--star-orange": "#ffb733",
     "--star-orange-darker": "#ffa500",
   };
@@ -22,7 +26,11 @@ function Layout(props) {
     "--second": "#fc6f71",
     "--text-color": "#fbfbfb",
     "--text-color-second": "#7d7d7d",
-    "--btn-hover": "#313131",
+    "--menu-option-hover": "7d7d7d",
+    // no need change as theme changes
+    "--btn-hover": "#e2e2e2",
+    "--btn-delete": "#ff4d4d",
+    "--btn-delete-hover": "#ff9999",
     "--star-orange": "#ffb733",
     "--star-orange-darker": "#ffa500",
   };
@@ -46,5 +54,4 @@ function Layout(props) {
     </div>
   );
 }
-
 export default Layout;

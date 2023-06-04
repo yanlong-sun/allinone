@@ -40,10 +40,11 @@
   fill: var(--star-orange);
 }
 
-.bookMarkBtn {
+.operationBtn {
   position: absolute;
   width: 3rem;
-  right: -5px;
+  right: -4px;
+  top: -2px;
   border: none;
   background-color: rgba(0, 0, 0, 0);
 }
@@ -62,4 +63,27 @@
 .bookMark:active {
   fill: var(--star-orange-darker);
   color: var(--star-orange-darker);
+}
+
+.deleteBtn {
+  position: absolute;
+  width: 2rem;
+  right: -6px;
+  top: -5px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.delete {
+  fill: var(--btn-delete);
+}
+
+.delete:link,
+.delete:visited {
+  transition: all 0.3;
+}
+
+.delete:hover,
+.delete:active {
+  fill: var(--btn-delete-hover);
 }
